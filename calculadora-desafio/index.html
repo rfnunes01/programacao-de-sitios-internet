@@ -20,32 +20,52 @@
     
         <div class="calculator-keys">
     
-          <button type="button" class="btn btn-info shadow-lg" value="+" onclick="inputValue(this.value)">+</button>
-          <button type="button" class="btn btn-info shadow-lg" value="-" onclick="inputValue(this.value)">-</button>
-          <button type="button" class="btn btn-info shadow-lg" value="*" onclick="inputValue(this.value)">&times;</button>
-          <button type="button" class="btn btn-info shadow-lg" value="/" onclick="inputValue(this.value)">&divide;</button>
+          <button type="button" class="calculator-button btn btn-info shadow-lg" value="+" onclick="inputValue(this.value)">+</button>
+          <button type="button" class="calculator-button btn btn-info shadow-lg" value="-" onclick="inputValue(this.value)">-</button>
+          <button type="button" class="calculator-button btn btn-info shadow-lg" value="*" onclick="inputValue(this.value)">&times;</button>
+          <button type="button" class="calculator-button btn btn-info shadow-lg" value="/" onclick="inputValue(this.value)">&divide;</button>
     
-          <button type="button" value="7" class="btn btn-light shadow-lg" onclick="inputValue(this.value)">7</button>
-          <button type="button" value="8" class="btn btn-light shadow-lg" onclick="inputValue(this.value)">8</button>
-          <button type="button" value="9" class="btn btn-light shadow-lg" onclick="inputValue(this.value)">9</button>
-    
-    
-          <button type="button" value="4" class="btn btn-light shadow-lg" onclick="inputValue(this.value)">4</button>
-          <button type="button" value="5" class="btn btn-light shadow-lg" onclick="inputValue(this.value)">5</button>
-          <button type="button" value="6" class="btn btn-light shadow-lg" onclick="inputValue(this.value)">6</button>
+          <button type="button" value="7" class="calculator-button btn btn-light shadow-lg" onclick="inputValue(this.value)">7</button>
+          <button type="button" value="8" class="calculator-button btn btn-light shadow-lg" onclick="inputValue(this.value)">8</button>
+          <button type="button" value="9" class="calculator-button btn btn-light shadow-lg" onclick="inputValue(this.value)">9</button>
     
     
-          <button type="button" value="1" class="btn btn-light shadow-lg" onclick="inputValue(this.value)">1</button>
-          <button type="button" value="2" class="btn btn-light shadow-lg" onclick="inputValue(this.value)">2</button>
-          <button type="button" value="3" class="btn btn-light shadow-lg" onclick="inputValue(this.value)">3</button>
+          <button type="button" value="4" class="calculator-button btn btn-light shadow-lg" onclick="inputValue(this.value)">4</button>
+          <button type="button" value="5" class="calculator-button btn btn-light shadow-lg" onclick="inputValue(this.value)">5</button>
+          <button type="button" value="6" class="calculator-button btn btn-light shadow-lg" onclick="inputValue(this.value)">6</button>
     
     
-          <button type="button" value="0" class="btn btn-light shadow-lg" onclick="inputValue(this.value)">0</button>
-          <button type="button" class="decimal btn btn-secondary shadow-lg" value="." onclick="inputValue(this.value)">.</button>
-          <button type="button" class="all-clear btn btn-danger btn-sm shadow-lg" onclick="limpaDisplay()">AC</button>
+          <button type="button" value="1" class="calculator-button btn btn-light shadow-lg" onclick="inputValue(this.value)">1</button>
+          <button type="button" value="2" class="calculator-button btn btn-light shadow-lg" onclick="inputValue(this.value)">2</button>
+          <button type="button" value="3" class="calculator-button btn btn-light shadow-lg" onclick="inputValue(this.value)">3</button>
     
-          <button type="button" class="equal-sign btn btn-primary shadow-lg" onclick="calcular()">=</button>
     
+          <button type="button" value="0" class="calculator-button btn btn-light shadow-lg" onclick="inputValue(this.value)">0</button>
+          <button type="button" class="decimal calculator-button btn btn-secondary shadow-lg" value="." onclick="inputValue(this.value)">.</button>
+          <button type="button" class="all-clear calculator-button btn btn-danger btn-sm shadow-lg" onclick="limpaDisplay()">AC</button>
+    
+          <button type="button" class="equal-sign calculator-button btn btn-primary shadow-lg" onclick="calcular()">=</button>
+    
+        </div>
+      </div>
+
+      <input type="hidden" id="btn-show-modal" data-toggle="modal" data-target="#modal-error" />
+
+      <!-- Modal -->
+      <div class="modal fade" id="modal-error" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header bg-danger text-light">
+              <h5 class="modal-title" id="staticBackdropLabel">Erro</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <h4>Erro de expreção</h4>
+              <p id="error-description" class="lead">Unexpected number</p>
+            </div>
+          </div>
         </div>
       </div>
 

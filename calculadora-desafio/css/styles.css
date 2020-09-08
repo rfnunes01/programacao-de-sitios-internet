@@ -1,14 +1,19 @@
-html {
-    font-size: 62.5%;
-    box-sizing: border-box;
-  }
-
   *,
   *::before,
   *::after {
     margin: 0;
     padding: 0;
     box-sizing: inherit;
+  }
+
+
+  button, button:focus, button:active {
+    outline: none !important;
+ }
+
+  .calculator {
+    font-size: 62.5%;
+    box-sizing: border-box;
   }
 
   .calculator {
@@ -33,7 +38,7 @@ html {
     font-size: 4rem;
   }
 
-  button {
+  .calculator-button {
     height: 60px;
     font-size: 2rem!important;
   }

@@ -40,6 +40,14 @@ function inputValue(numero) {
     }
 
     /**
+     * Se o usuário inserir dois pontos(.)
+     * retiramos um ponto(.)
+     */
+    if(lastChar === '.' && numero === '.'){
+        back();
+    }
+
+    /**
      * Validações de entrada das operações
      * Se o usuário digitar o mesmo operador mais de uma vez
      * ou se o usuário digitar um operador e depois outro operador
@@ -171,20 +179,134 @@ function inputValue(numero) {
 
 // Função para fazer o cálculo
 function calcular() {
-    /**
-     * Recebe o valor do display da calculadora
-     */
-    let valor = display.value;
+    try {
+        /**
+         * Recebe o valor do display da calculadora
+         */
+        let valor = display.value;
+
+        /**
+         * Verifica se valor é verdadeiro
+         */
+        if(valor) {
+            /**
+             * display recebe o valor 
+             * eval() - nesse caso vamos pegar o conteudo da string e
+             * efetuar cáculos matemáticos
+             */
+            display.value = eval(valor);
+        }
+    } catch (error) {
+        /**
+         * Display recebe error
+         */
+        display.value = "error";
+
+        /**
+         * Injeta o erro recebido do catch
+         */
+        document.getElementById("error-description").innerText = error.message;
+        /**
+         * Clica em um botão do tipo hidden para mostrar o modal
+         */
+        document.getElementById("btn-show-modal").click();
+    } 
+}
+
+//Função para capturar os eventos do teclado
+function keyPressed(evt){
+    evt = evt || window.event;
+    //var key = evt.keyCode || evt.which;
+    //var tecla = String.fromCharCode(key);
+    var tecla = evt.key;
+
+    //alert(tecla);
 
     /**
-     * Verifica se valor é verdadeiro
+     * Instrução para controlar as operações condicionais
      */
-    if(valor) {
-        /**
-         * display recebe o valor 
-         * eval() - nesse caso vamos pegar o conteudo da string e
-         * efetuar cáculos matemáticos
-         */
-        display.value = eval(valor);
+    switch (tecla) {
+        case '1':
+            inputValue(tecla);
+            break;
+        
+        case '2':
+            inputValue(tecla);
+            break;
+
+        case '3':
+            inputValue(tecla);
+            break;
+
+        case '4':
+            inputValue(tecla);
+            break;
+
+        case '5':
+            inputValue(tecla);
+            break;
+
+        case '6':
+            inputValue(tecla);
+            break;
+
+        case '7':
+            inputValue(tecla);
+            break;
+
+        case '8':
+            inputValue(tecla);
+            break;
+
+        case '9':
+            inputValue(tecla);
+            break;
+
+        case '0':
+            inputValue(tecla);
+            break;
+
+        case '.':
+            inputValue(tecla);
+            break;
+
+        case ',':
+            inputValue('.');
+            break;
+
+        case '+':
+            inputValue(tecla);
+            break;
+
+        case '-':
+            inputValue(tecla);
+            break;
+
+        case '*':
+            inputValue(tecla);
+            break;
+
+        case '/':
+            inputValue(tecla);
+            break;
+
+        case 'Escape':
+            limpaDisplay();
+            break;
+
+        case 'Enter':
+            calcular();
+            break;
+
+        default:
+            break;
     }
+
 }
+
+/**
+ * Objeto do DOM para ficar observando quando
+ * uma tecla é pressionada no teclado
+ * O evento onkeydown ocorre quando o usuário está pressionando uma tecla (no teclado).
+ */
+document.body.onkeydown = keyPressed;
