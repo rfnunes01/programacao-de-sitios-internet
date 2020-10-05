@@ -22,15 +22,18 @@
     <main role="main">
         <div class="container-fluid mt-4">
             <form>
+                <div id="msg" class="alert alert-danger col-12 col-md-7 d-none" role="alert">
+                    
+                  </div>
                 <div class="form-row">
                     <div class="col-12 col-md-3">
-                        <input id="inpDescr" type="text" class="form-control" placeholder="Descrição">
+                        <input type="text" id="inpDescr" type="text" class="form-control" placeholder="Descrição">
                     </div>
                     <div class="col-6 col-md-2 mt-2 mt-md-0">
-                        <input id="inpQtde" type="text" class="form-control" placeholder="Quantidade">
+                        <input type="tel" id="inpQtde" type="text" class="form-control" placeholder="Quantidade">
                     </div>
                     <div class="col-6 col-md-2 mt-2 mt-md-0">
-                        <input id="inpPreco" type="text" class="form-control" placeholder="Preço">
+                        <input type="tel" id="inpPreco" type="text" class="form-control" placeholder="Preço">
                     </div>
                     <div class="col-12 col-md-auto mt-2 mt-md-0">
                         <button type="button" class="btn btn-success w-100" onclick="adicionarItem();">Adicionar</button>
@@ -39,13 +42,20 @@
             </form>
 
             <table id="tabItens" class="table mt-5 border-0">
+                <thead>
+                    <tr>
+                        <th scope="col">Descrção</th>
+                        <th scope="col">Quantidade</th>
+                        <th scope="col">Preço</th>
+                    </tr>
+                </thead>
             </table>
 
         </div>
     </main>
     <footer class="fixed-bottom">
-        <nav class="navbar navbar-light bg-light">
-            <h4 class="ml-auto mr-5 text-success">Total: <span id="totalValue">R$ 0,00</span></h4>
+        <nav class="navbar navbar-light bg-light d-flex justify-content-center">
+            <h4 id="vTotal" class="text-center text-success">Total: R$0,00</h4>
         </nav>
     </footer>
 
