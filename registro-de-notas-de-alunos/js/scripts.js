@@ -384,6 +384,11 @@ function LimparNotas() {
     alunos = [];
 
     /**
+     * ID inicial com o valor de 1
+     */
+    id.value = 1;
+
+    /**
      * Voltando ao padrão inicial da nossa tabela de notas
      */
    document.getElementById('message-null').innerHTML = "NÃO FOI ENCONTADO REGISTROS";
