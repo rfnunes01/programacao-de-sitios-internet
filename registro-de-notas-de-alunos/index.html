@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <title>Tabela de Notas e Médias</title>
+
+    <style>
+        /* Tirando as setinhas dos campos do tipo numérico */
+        input[type=number]::-webkit-inner-spin-button,
+        input[type=number]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-light bg-light">
+            <span class="navbar-brand mb-0 h1">Tabela de Notas e Médias</span>
+        </nav>
+    </header>
+    <main role="main">
+        <div class="container-fluid mt-4">
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">
+                Lançar notas
+            </button>
+            <button type="button" class="btn btn-warning ml-5" onclick="LimparNotas()">
+                Limpar notas
+            </button>
+
+            <table id="tabNotas" class="table table-bordered mt-5 text-center">
+                <thead>
+                    <tr>
+                        <th style="width: 130px!important;">ID</th>
+                        <th style="width: 400px!important;">NOME</th>
+                        <th style="width: 130px!important;">NOTA 1</th>
+                        <th style="width: 130px!important;">NOTA 2</th>
+                        <th style="width: 130px!important;">NOTA 3</th>
+                        <th style="width: 130px!important;">MÉDIA</th>
+                        <th style="width: 200px!important;">STATUS</th>
+                    </tr>
+                </thead>
+            </table>
+            <div id="message-null" class="container w-100 text-center">
+                NÃO FOI ENCONTADO REGISTROS
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Lançar uma nova nota</h5>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div id="msg" class="col-12 alert d-none" role="alert"></div>
+                        <div class="form-row">
+                            <div class="col-12 col-md-3">
+                                <input type="text" id="inpID" class="form-control text-center" placeholder="ID"
+                                    value="1" disabled>
+                            </div>
+                            <div class="col-12 col-md-12 mt-2">
+                                <input type="text" id="inpNome" class="form-control" placeholder="Nome do aluno" autofocus>
+                            </div>
+                            <div class="col-12 mt-2">
+                                <small id="messageHelp" class="form-text text-info">
+                                   Insira ponto ( <b>.</b> ) no lugar da vírgula ( <b>,</b> ) para não gerar possíveis erros no cáculo.
+                                </small>
+                            </div>
+                            <div class="col-12 col-md-4 mt-2">
+                                <input type="number" id="inpNota1" class="form-control" placeholder="Nota 1">
+                            </div>
+                            <div class="col-12 col-md-4 mt-2">
+                                <input type="number" id="inpNota2" class="form-control" placeholder="Nota 2">
+                            </div>
+                            <div class="col-12 col-md-4 mt-2">
+                                <input type="number" id="inpNota3" class="form-control" placeholder="Nota 3">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal"
+                        onclick="LimparCampos()">Cancelar</button>
+                    <button type="button" class="btn btn-primary" onclick="LancarNota();">Adicionar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
+    </script>
+
+    <script type="text/javascript" src="js/scripts.js"></script>
+
+</body>
+
+</html>
